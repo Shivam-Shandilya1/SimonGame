@@ -2,6 +2,8 @@
 var randum = Math.random()*4 ;
 var randomnum = Math.ceil(randum);
 console.log(randomnum);
+
+
 function playgreen()
 {
     var audio =new Audio('sounds/green.mp3');
@@ -22,9 +24,23 @@ function playblue()
     var audio =new Audio('sounds/blue.mp3');
     audio.play();
 }
-
+$(document).ready(function(randomnum)
+{
 
 $(".green").click(playgreen);
 $(".red").click(playred);
 $(".yellow").click(playyellow);
 $(".blue").click(playblue);
+switch (randomnum)
+{
+    case 1: playgreen();
+    break;
+    case 2: playred();
+    break;
+    case 3: playyellow();
+    break;
+    case 4: playblue();
+    break;
+    default: break;
+}
+});
