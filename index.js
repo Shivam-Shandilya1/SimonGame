@@ -1,9 +1,3 @@
-
-var randum = Math.random()*4 ;
-var randomnum = Math.ceil(randum);
-console.log(randomnum);
-
-
 function playgreen()
 {
     var audio =new Audio('sounds/green.mp3');
@@ -24,23 +18,37 @@ function playblue()
     var audio =new Audio('sounds/blue.mp3');
     audio.play();
 }
-$(document).ready(function(randomnum)
-{
 
 $(".green").click(playgreen);
 $(".red").click(playred);
 $(".yellow").click(playyellow);
 $(".blue").click(playblue);
-switch (randomnum)
+var randum = Math.random()*4 ;
+var randomnum = Math.ceil(randum);
+console.log(randomnum);
+
+if(randomnum == 1)
 {
-    case 1: playgreen();
-    break;
-    case 2: playred();
-    break;
-    case 3: playyellow();
-    break;
-    case 4: playblue();
-    break;
-    default: break;
+    $("#my_audio").attr("src","sounds/green.mp3");
+
 }
+
+if(randomnum == 2)
+{
+    $("#my_audio").attr("src","sounds/red.mp3");
+}
+
+if(randomnum == 3)
+{
+    $("#my_audio").attr("src","sounds/yellow.mp3");
+}
+
+if(randomnum == 4)
+{
+    $("#my_audio"). attr("src","sounds/blue.mp3");
+}
+$(document).ready(function()
+{
+$("#my_audio").trigger('play');
+
 });
