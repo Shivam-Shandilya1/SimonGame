@@ -18,7 +18,10 @@ function playblue()
     var audio =new Audio('sounds/blue.mp3');
     audio.play();
 }
-
+function audiostop()
+{
+$("#my_audio").trigger('pause');
+}
 $(".green").click(playgreen);
 $(".red").click(playred);
 $(".yellow").click(playyellow);
@@ -50,5 +53,6 @@ if(randomnum == 4)
 $(document).ready(function()
 {
 $("#my_audio").trigger('play');
+window.setTimeout(audiostop,300);
 
 });
